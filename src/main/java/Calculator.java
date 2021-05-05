@@ -14,15 +14,13 @@ public class Calculator {
 
     UnaryOperator<Integer> pow = x -> x * x;
 //    UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
-    private int abs (Integer x) {
-        if (x>0) {
-            return x;
-        }
-        else if (x < 0) {
-            return (x * -1);
-        }
-        return 0;
-    }
+    UnaryOperator<Integer> abs = x -> {
+        int result = 0;
+        if (x > 0) return x;
+        else result = x * -1;
+        return result;
+};
+
     /*
     abs использует тернарный оператор, проверяя сначала число на положительность.
     Если > 0, то возвратащает то же число х
