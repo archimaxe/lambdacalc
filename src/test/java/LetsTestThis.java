@@ -8,7 +8,7 @@ public class LetsTestThis {
         Calculator calculator = Calculator.instance.get();
         int expected = 0;
         int actual = calculator.devide.apply(10, 0);
-        Assertions.assertTrue(expected==actual, "Проверка провалена");
+        Assertions.assertEquals(expected, actual, "Проверка провалена");
     }
 
     @Test
@@ -16,7 +16,7 @@ public class LetsTestThis {
         Calculator calculator = Calculator.instance.get();
         int expected = 3;
         int actual = calculator.devide.apply(27, 7);
-        Assertions.assertTrue(expected==actual, "Проверка провалена");
+        Assertions.assertEquals(expected, actual, "Проверка провалена");
     }
 
     @Test
@@ -24,7 +24,7 @@ public class LetsTestThis {
         Calculator calculator = Calculator.instance.get();
         int expected = 10;
         int actual = calculator.multiply.apply(2, 5);
-        Assertions.assertTrue(expected==actual, "Проверка провалена");
+        Assertions.assertEquals(expected, actual, "Проверка провалена");
     }
 
     @Test
@@ -32,7 +32,7 @@ public class LetsTestThis {
         Calculator calculator = Calculator.instance.get();
         int expected = -3;
         int actual = calculator.minus.apply(2, 5);
-        Assertions.assertTrue(expected==actual, "Проверка провалена");
+        Assertions.assertEquals(expected, actual, "Проверка провалена");
     }
 
     @Test
@@ -40,7 +40,7 @@ public class LetsTestThis {
         Calculator calculator = Calculator.instance.get();
         int expected = 3;
         int actual = calculator.plus.apply(-2, 5);
-        Assertions.assertTrue(expected==actual, "Проверка провалена");
+        Assertions.assertEquals(expected, actual, "Проверка провалена");
     }
 
     @Test
@@ -48,8 +48,8 @@ public class LetsTestThis {
         Calculator calculator = Calculator.instance.get();
         int expected = 3;
         int actual = calculator.plus.apply(-2, 5);
-        Assertions.assertAll("???",
-                () -> Assertions.assertTrue(expected == actual, "Проверка провалена"),
+        Assertions.assertAll("assertName",
+                () -> Assertions.assertEquals(expected, actual, "Проверка провалена"),
                 () -> Assertions.assertNotNull(actual, "Actual = Null"));
     }
 }
